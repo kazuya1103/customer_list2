@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "491336320919",
+    "firebase_url": "https://customer-list-app-2-default-rtdb.firebaseio.com",
+    "project_id": "customer-list-app-2",
+    "storage_bucket": "customer-list-app-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491336320919:android:7cd6f1d73cf283d22166d2",
+        "android_client_info": {
+          "package_name": "com.kazuya.customerlistapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491336320919-gb7tf8vjej2rfm3m41n4ichnp215mmm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNbm7NL_9GG9NB9CbdEnhmHfAl5KRQq1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491336320919-gb7tf8vjej2rfm3m41n4ichnp215mmm8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "491336320919-of4qhq9oktdjrds6lkmr31korgnorjhr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kazuya.customerlistapp2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

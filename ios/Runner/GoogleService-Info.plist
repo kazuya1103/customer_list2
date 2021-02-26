@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>591267600909-6cji7f8qj106urnagcge356dsmapc16b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.591267600909-6cji7f8qj106urnagcge356dsmapc16b</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDZStKb8WId2pVRWDWNYx4OJVrWbkzvJtE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>591267600909</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kazuya.smaple</string>
+	<key>PROJECT_ID</key>
+	<string>smaple-app-1ae26</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smaple-app-1ae26.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:591267600909:ios:b77dc2dd46853f4bc71344</string>
+	<key>DATABASE_URL</key>
+	<string>https://smaple-app-1ae26.firebaseio.com</string>
+</dict>
+</plist>
