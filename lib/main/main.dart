@@ -1,3 +1,4 @@
+import 'package:customerlistapp2/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -31,10 +32,10 @@ class MyApp extends StatelessWidget {
                   RaisedButton(
                     child: Text('本一覧'),
                     onPressed: () {
-                      //  Navigator.push(
-                      //  context,
-                      // MaterialPageRoute(builder: (context) => BookListPage()),
-                      //);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpPage()),
+                      );
                     },
                   ),
                   RaisedButton(
