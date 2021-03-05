@@ -1,8 +1,10 @@
 import 'package:customerlistapp2/signup/signup_model.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SignUpPage extends StatelessWidget {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
     final mailController = TextEditingController();
@@ -42,7 +44,11 @@ class SignUpPage extends StatelessWidget {
                   RaisedButton(
                     child: Text('登録する'),
                     onPressed: () async {
-                      await model.signUp();
+                      try {
+                        await model.signUp();
+                      } catch (e) {
+                        _showDialog(context, e.toString());
+                      }
                     },
                   ),
                 ],
@@ -51,6 +57,28 @@ class SignUpPage extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+
+  Future _showDialog(
+    BuildContext context,
+    String title,
+  ) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('ok'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

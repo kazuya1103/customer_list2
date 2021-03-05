@@ -1,14 +1,17 @@
+import 'package:customerlistapp2/presentation/customer_list/customer_list_page.dart';
+import 'package:customerlistapp2/presentation/main/main_model.dart';
 import 'package:customerlistapp2/signup/signup_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'main_model.dart';
-
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   RaisedButton(
-                    child: Text('本一覧'),
+                    child: Text('ログインページ'),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -39,12 +42,13 @@ class MyApp extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
-                    child: Text('新規登録'),
+                    child: Text('顧客一覧'),
                     onPressed: () {
-                      // Navigator.push(
-                      // context,
-                      // MaterialPageRoute(builder: (context) => SignUpPage()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CustomerListPage()),
+                      );
                     },
                   ),
                   RaisedButton(
