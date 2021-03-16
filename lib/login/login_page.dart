@@ -1,22 +1,22 @@
-import 'package:customerlistapp2/signup/signup_model.dart';
+import 'package:customerlistapp2/login/login_model.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SignUpPage extends StatelessWidget {
+class LoginPage extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
     final mailController = TextEditingController();
     final passwordController = TextEditingController();
 
-    return ChangeNotifierProvider<SignUpModel>(
-      create: (_) => SignUpModel(),
+    return ChangeNotifierProvider<LoginModel>(
+      create: (_) => LoginModel(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('サインアップ'),
+          title: Text('ログイン'),
         ),
-        body: Consumer<SignUpModel>(
+        body: Consumer<LoginModel>(
           builder: (context, model, child) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -42,11 +42,11 @@ class SignUpPage extends StatelessWidget {
                     },
                   ),
                   RaisedButton(
-                    child: Text('登録する'),
+                    child: Text('ログインする'),
                     onPressed: () async {
                       try {
-                        await model.signUp();
-                        _showDialog(context, '登録完了しました！');
+                        await model.login();
+                        _showDialog(context, 'ログインしました！');
                       } catch (e) {
                         _showDialog(context, e.toString());
                       }

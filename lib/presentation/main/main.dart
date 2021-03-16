@@ -1,3 +1,4 @@
+import 'package:customerlistapp2/login/login_page.dart';
 import 'package:customerlistapp2/presentation/customer_list/customer_list_page.dart';
 import 'package:customerlistapp2/presentation/main/main_model.dart';
 import 'package:customerlistapp2/signup/signup_page.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   RaisedButton(
-                    child: Text('ログインページ'),
+                    child: Text('新規登録'),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -54,10 +55,10 @@ class MyApp extends StatelessWidget {
                   RaisedButton(
                     child: Text('ログイン'),
                     onPressed: () {
-                      //Navigator.push(
-                      //context,
-                      // MaterialPageRoute(builder: (context) =>()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
                     },
                   ),
                 ],
