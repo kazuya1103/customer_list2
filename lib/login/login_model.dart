@@ -16,6 +16,11 @@ class LoginModel extends ChangeNotifier {
     if (password.isEmpty) {
       throw ('パスワードを入力してください');
     }
+
+    if (password.isEmpty) {
+      throw ('パスワードを入力してください');
+    }
+
     final result = await _auth.signInWithEmailAndPassword(
       email: mail,
       password: password,

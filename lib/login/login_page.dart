@@ -1,4 +1,5 @@
 import 'package:customerlistapp2/login/login_model.dart';
+import 'package:customerlistapp2/presentation/customer_list/customer_list_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -47,8 +48,14 @@ class LoginPage extends StatelessWidget {
                       try {
                         await model.login();
                         _showDialog(context, 'ログインしました！');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CustomerListPage()));
                       } catch (e) {
-                        _showDialog(context, e.toString());
+                        _showDialog(
+                            context, //e.toString(),
+                            'メールアドレスかパスワードが違います');
                       }
                     },
                   ),

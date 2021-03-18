@@ -21,14 +21,14 @@ class MyApp extends StatelessWidget {
         create: (_) => MainModel(),
         child: Scaffold(
           appBar: AppBar(
-            title: Text('サンプル'),
+            title: Text('顧客管理アプリ'),
           ),
           body: Consumer<MainModel>(builder: (context, model, child) {
             return Center(
               child: Column(
                 children: <Widget>[
                   Text(
-                    model.kazuyaText,
+                    model.Text,
                     style: TextStyle(
                       fontSize: 30,
                     ),
@@ -42,16 +42,16 @@ class MyApp extends StatelessWidget {
                       );
                     },
                   ),
-                  RaisedButton(
-                    child: Text('顧客一覧'),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CustomerListPage()),
-                      );
-                    },
-                  ),
+                  // RaisedButton(
+                  //   child: Text('顧客一覧'),
+                  //    onPressed: () {
+                  //      Navigator.push(
+                  //        context,
+                  //        MaterialPageRoute(
+                  //             builder: (context) => CustomerListPage()),
+                  //      );
+                  //    },
+                  //   ),
                   RaisedButton(
                     child: Text('ログイン'),
                     onPressed: () {

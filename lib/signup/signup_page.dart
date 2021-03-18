@@ -1,3 +1,4 @@
+import 'package:customerlistapp2/login/login_page.dart';
 import 'package:customerlistapp2/signup/signup_model.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -46,9 +47,37 @@ class SignUpPage extends StatelessWidget {
                     onPressed: () async {
                       try {
                         await model.signUp();
-                        _showDialog(context, '登録完了しました！');
+
+                        await showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('登録完了しました！'),
+                                actions: <Widget>[
+                                  FlatButton(
+                                      child: Text('ok'),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LoginPage()));
+                                      })
+                                ],
+                              );
+                            });
+                        //_showDialog(context, '登録完了しました！');
+                        //  AlertDialog(title: Text('登録完了しました！'), actions: <Widget>[
+                        //     FlatButton(
+                        //        child: Text('ok'),
+                        //        onPressed: (
+                        //     await
+                        //await Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //        builder: (context) => LoginPage()));
                       } catch (e) {
-                        _showDialog(context, e.toString());
+                        _showDialog(context, 'メールアドレスを正しく入力してください');
                       }
                     },
                   ),
