@@ -42,16 +42,6 @@ class MyApp extends StatelessWidget {
                       );
                     },
                   ),
-                  // RaisedButton(
-                  //   child: Text('顧客一覧'),
-                  //    onPressed: () {
-                  //      Navigator.push(
-                  //        context,
-                  //        MaterialPageRoute(
-                  //             builder: (context) => CustomerListPage()),
-                  //      );
-                  //    },
-                  //   ),
                   RaisedButton(
                     child: Text('ログイン'),
                     onPressed: () {

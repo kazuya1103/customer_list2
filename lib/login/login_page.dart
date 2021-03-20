@@ -47,11 +47,27 @@ class LoginPage extends StatelessWidget {
                     onPressed: () async {
                       try {
                         await model.login();
-                        _showDialog(context, 'ログインしました！');
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => CustomerListPage()));
+
+                        await showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('ログインしました！'),
+                                actions: <Widget>[
+                                  FlatButton(
+                                      child: Text('ok'),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                        Navigator.of(context).pop();
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    CustomerListPage()));
+                                      })
+                                ],
+                              );
+                            });
                       } catch (e) {
                         _showDialog(
                             context, //e.toString(),

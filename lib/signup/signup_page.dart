@@ -58,26 +58,10 @@ class SignUpPage extends StatelessWidget {
                                       child: Text('ok'),
                                       onPressed: () {
                                         Navigator.of(context).pop();
-                                        //Navigator.push(
-                                        //    context,
-                                        //    MaterialPageRoute(
-                                        //       builder: (context) =>
-                                        //           LoginPage()));
                                       })
                                 ],
                               );
                             });
-                        //_showDialog(context, '登録完了しました！');
-                        //  AlertDialog(title: Text('登録完了しました！'), actions: <Widget>[
-                        //     FlatButton(
-                        //        child: Text('ok'),
-                        //        onPressed: (
-                        //     await
-                        //await Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //
-                        //        builder: (context) => LoginPage()));
                         Navigator.of(context).pop();
                       } catch (e) {
                         _showDialog(context, 'メールアドレスを正しく入力してください');
