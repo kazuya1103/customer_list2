@@ -9,10 +9,14 @@ class AddCustomerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isUpdate = customer != null;
-    final textEditingController = TextEditingController();
+    final nameController = TextEditingController();
+    final rubyController = TextEditingController();
+    final memoController = TextEditingController();
 
     if (isUpdate) {
-      textEditingController.text = customer.name;
+      nameController.text = customer.name;
+      rubyController.text = customer.ruby;
+      memoController.text = customer.memo;
     }
 
     return ChangeNotifierProvider<AddCustomerModel>(
@@ -28,9 +32,30 @@ class AddCustomerPage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   TextField(
-                    controller: textEditingController,
+                    decoration: InputDecoration(
+                      hintText: '名前',
+                    ),
+                    controller: nameController,
                     onChanged: (text) {
                       model.customerName = text;
+                    },
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'ふりがな',
+                    ),
+                    controller: rubyController,
+                    onChanged: (text) {
+                      model.customerRuby = text;
+                    },
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'メモ',
+                    ),
+                    controller: memoController,
+                    onChanged: (text) {
+                      model.customerMemo = text;
                     },
                   ),
                   RaisedButton(

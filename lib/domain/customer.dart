@@ -5,9 +5,11 @@ class Customer {
     documentID = doc.id;
     name = doc.data()['name'];
     ruby = doc.data()['ruby'];
+    memo = doc.data()['memo'];
   }
 
   String documentID;
   String name;
   String ruby;
+  String memo;
 }
