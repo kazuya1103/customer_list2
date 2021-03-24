@@ -1,5 +1,6 @@
 import 'package:customerlistapp2/domain/customer.dart';
 import 'package:customerlistapp2/presentation/add_customer/add_customer_page.dart';
+import 'package:customerlistapp2/presentation/customer_edit/customer_display_page.dart';
 import 'package:customerlistapp2/presentation/customer_list/customer_list_model.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,17 @@ class CustomerListPage extends StatelessWidget {
             final listTiles = customers
                 .map((customer) => ListTile(
                       title: Text(customer.name),
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CustomerDisplayPage(
+                                    customer: customer,
+                                  ),
+                              fullscreenDialog: true),
+                        );
+                        model.fetchCustomers();
+                      },
                       trailing: Container(
                         width: 96,
                         child: Row(
